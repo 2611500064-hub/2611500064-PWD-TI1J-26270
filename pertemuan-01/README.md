@@ -8,4 +8,4 @@
 
 4. *HTML, CSS, JavaScript, PHP, MySQL* – HTML untuk struktur, CSS untuk tampilan, JavaScript untuk interaksi, PHP untuk proses server, dan MySQL untuk penyimpanan data. <br>
 
-5. *Hubungan Antarteknologi* – Semua teknologi saling terhubung untuk membangun aplikasi web yang dinamis dan interaktif. <br>
+5. *Hubungan Antarteknologi* – Semua teknologi saling terhubung untuk membangun aplikasi web yang dinamis dan interaktif.. <br>
