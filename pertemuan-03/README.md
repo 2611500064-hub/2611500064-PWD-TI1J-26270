@@ -8,7 +8,7 @@
 ​text untuk memasukkan Nama Mahasiswa ​
 • email untuk alamat email aktif.​number untuk pengisian angka Semester.​
 • Date untuk menetapkan Tanggal Kunjungan.
-• ​radio untuk memilih Jenis Pesan (opsi Pertanyaan atau Saran).
+• ​radio untuk memilih Jenis Pesan (opsi Pertanyaan atau Saran)
 • ​checkbox untuk menentukan Pilihan Topik ( HTML/CSS).
 • ​Atribut Validasi Data: Memanfaatkan atribut required, minlength, maxlength, min, dan max. Penggunaan tipe data email, number, dan date turut membantu memfilter keabsahan format masukan secara otomatis.
 
