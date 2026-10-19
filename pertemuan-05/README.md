@@ -22,4 +22,4 @@ Dokumentasi pengembangan halaman web pada P5, meliputi JavaScript, DOM, event li
 - Tambahkan penanganan event click
 - Tambahkan penanganan event submit
 - Tambahkan penanganan event reset
-- Selesaikan pengujian dan perbaikan P5
+- Selesaikan pengujian dan perbaikan P5.
