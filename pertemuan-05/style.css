@@ -164,7 +164,8 @@ section {
 
 .input-form {
     width: 100%;
-    max-width: 480px;
+    max-width: 100%;
+    /* Dikerjakan dari max-width: 480px menjadi 100% agar melebar penuh mentok ke kanan */
     background-color: #ffffff;
     color: #111827;
     font-family: Arial, sans-serif;
