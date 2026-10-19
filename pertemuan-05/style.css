@@ -14,44 +14,49 @@ body {
 header {
     background-color: #003366;
     color: #ffffff;
-    padding: 20px;
+    padding: 16px 20px;
     margin-bottom: 20px;
     border: 1px solid #00264d;
 }
 
 header h1 {
-    margin: 0 0 16px;
-    font-size: 28px;
+    margin: 0 0 12px;
+    font-size: 24px;
 }
 
-/* Sembunyikan tombol Menu secara bawaan di layar Laptop/Desktop */
+/* Tombol Hamburger Menu (☰) */
 #navToggle {
     display: none;
     background: none;
     color: #ffffff;
     border: 1px solid #ffffff;
-    padding: 6px 12px;
-    font-weight: bold;
+    padding: 4px 10px;
+    font-size: 20px;
+    line-height: 1;
+    border-radius: 4px;
     cursor: pointer;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
+/* Navigasi Desktop (Rata Kiri, Mendatar) */
 nav ul {
     display: flex;
     flex-direction: row;
-    /* Tampilan desktop mendatar */
     justify-content: flex-start;
     align-items: center;
     gap: 16px;
     margin: 0;
     padding: 0;
     list-style: none;
+    text-align: left;
 }
 
 nav a {
     color: #faf8f8;
     font-weight: bold;
     text-decoration: none;
+    padding: 4px 0;
+    display: inline-block;
 }
 
 nav a:hover,
@@ -59,7 +64,7 @@ nav a:focus-visible {
     text-decoration: underline;
 }
 
-/* Main Layout P4 */
+/* Main Layout */
 main {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -228,7 +233,7 @@ footer p {
     margin: 0;
 }
 
-/* Media Query Responsif Layar Kecil (Mobile) sesuai Modul P5 */
+/* Media Query Responsif Layar Kecil (Mobile) */
 @media (max-width: 768px) {
     main {
         grid-template-columns: minmax(0, 1fr);
@@ -244,23 +249,26 @@ footer p {
         padding: 16px;
     }
 
-    /* Tampilkan tombol Menu hanya pada layar kecil */
+    /* Tampilkan tombol Hamburger di mobile */
     #navToggle {
         display: block;
     }
 
-    /* Sembunyikan menu navigasi awal pada layar kecil */
+    /* Sembunyikan navigasi awal di mobile */
     #navMenu {
         display: none;
     }
 
-    /* Tampilkan menu navigasi ketika tombol diklik (class nav-open ditambahkan via JS) */
+    /* Tampilkan navigasi ketika tombol diklik (nav-open) */
     #navMenu.nav-open {
         display: block;
     }
 
+    /* Menu saat terbuka di layar HP: Rata kiri dan rapi ke bawah */
     nav ul {
         flex-direction: column;
-        gap: 8px;
+        align-items: flex-start;
+        gap: 10px;
+        padding-top: 8px;
     }
 }
