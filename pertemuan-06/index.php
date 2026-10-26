@@ -134,7 +134,7 @@ switch ($programStudi) {
 
             <div id="formFeedback"></div>
 
-           <form id="contactForm" action="index.php" novalidate>
+           <form id="contactForm" action="index.php" method="get" novalidate>
                 <div class="form-group">
                     <label for="nama">Nama Lengkap:</label><br />
                     <input type="text" id="nama" name="nama" class="input-form" />
@@ -192,7 +192,9 @@ switch ($programStudi) {
     </main>
 
     <footer>
-        <p>&copy; 2026 Azhar Nashrullah - 2611500064</p>
+        
+    <p>&copy; <?= date("Y") ?> <?php echo $namaMahasiswa; ?> [<?= $nim ?>]</p>
+
     </footer>
 
     <script src="script.js"></script>
