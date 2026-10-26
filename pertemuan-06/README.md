@@ -48,3 +48,13 @@
 - **Operator Aritmetika (`-`):** Menghitung sisa semester (`$batasSemester - $semester`), menghasilkan nilai `6`.
 - **Operator Perbandingan (`>=`, `<=`) & Logika (`&&`):** Memeriksa apakah semester berada pada rentang 1 s.d. 8 dan mahasiswa berstatus aktif.
 - **Operator Ternary (`?:`):** Menentukan teks hasil pemeriksaan (`"Sesuai rentang"` vs `"Perlu diperiksa"`).
+## F. Struktur Percabangan PHP
+
+### F.1 Percabangan `if-elseif-else`
+- Menentukan kategori semester (`"Semester awal"`, `"Semester menengah"`, atau `"Semester akhir"`). Hasil pengujian `$semester = 1` menghasilkan `"Semester awal"`.
+
+### F.2 Operator Ternary
+- Menentukan nama lengkap program studi berdasarkan kode `$programStudi` dan teks status keaktifan mahasiswa.
+
+### F.3 Percabangan `switch-case-default`
+- Menentukan fokus program studi berdasarkan nilai `$programStudi` (`"SI"` vs `"TI"`).
