@@ -1,5 +1,17 @@
 <?php
 // P6: PHP dasar dan pemrograman sisi peladen
+// Bagian 1: Variabel dan konstanta
+$nim = "2611500064";
+$namaMahasiswa = "Azhar Nashrullah";
+$programStudi = "TI";
+$tahunAkademik = "2026/2027";
+$semester = 1;
+$ipk = 0.00;
+$statusAktif = true;
+$catatanTambahan = null;
+
+const NAMA_MATA_KULIAH = "Pemrograman Web Dasar";
+const PROFIL_GITHUB = "2611500064-hub";
 ?>
 <!DOCTYPE html>
 <html lang="id">
@@ -12,16 +24,7 @@
 </head>
 
 <body>
-    <?php
-// Pengujian awal eksekusi PHP
-echo "PHP berhasil dijalankan.<br>";
-
-/* 
-   Komentar beberapa baris.
-   Komentar ini tidak akan tampil pada halaman.
-*/
-print "Keluaran menggunakan print.";
-?>
+   
     <header>
         <button id="navToggle" aria-expanded="false" aria-label="Buka navigasi">&#9776;</button>
         <nav id="navMenu">
@@ -36,7 +39,7 @@ print "Keluaran menggunakan print.";
     <main>
         <section id="home">
             <h2>Selamat Datang</h2>
-            <p>Halo, saya Azhar Nashrullah. Saya sedang mempelajari Pemrograman Web Dasar.</p>
+            <p>Halo, saya <strong><?php echo $namaMahasiswa; ?></strong>. Saya sedang mempelajari matakuliah <strong><?php print NAMA_MATA_KULIAH; ?></strong> pada tahun akademik <?php echo $tahunAkademik; ?>.</p>
             <img src="img/foto-profil.jpeg" alt="Foto Profil Azhar Nashrullah" />
         </section>
 
@@ -53,6 +56,9 @@ print "Keluaran menggunakan print.";
         </section>
 
         <section id="contact">
+            <p>
+  Kunjungi <a target="_blank" href="https://github.com/<?= PROFIL_GITHUB ?>">profil GitHub saya</a>.
+</p>
             <h2>Kontak Saya</h2>
 
             <div id="formFeedback"></div>

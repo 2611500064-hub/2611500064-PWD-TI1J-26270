@@ -33,3 +33,12 @@
 - **Pengujian `echo` vs `print`:** 
   - `echo` mencetak teks keluaran secara langsung.
   - `print` juga berhasil mencetak teks keluaran pada halaman.
+  ## D. Variabel, Konstanta, dan Tipe Data PHP
+
+### D.1 - D.3 Deklarasi Variabel, Konstanta, dan Tipe Data
+- **Variabel:** Menggunakan `$nim`, `$namaMahasiswa`, `$programStudi`, `$tahunAkademik`, `$semester`, `$ipk`, `$statusAktif`, dan `$catatanTambahan`.
+- **Konstanta:** Dideklarasikan menggunakan `NAMA_MATA_KULIAH` dan `PROFIL_GITHUB`.
+
+### D.4 Penggunaan Variabel dan Konstanta
+- Menampilkan data nama mahasiswa, mata kuliah, dan tahun akademik secara dinamis pada bagian Beranda.
+- Menggunakan sintaks singkat `<?= PROFIL_GITHUB ?>` untuk membentuk tautan URL profil GitHub.
