@@ -1,8 +1,8 @@
 # Dokumentasi Pertemuan 6 (P6) - Pemrograman Web Dasar
 
-**Nama:** [Isi Nama Kamu]  
-**NIM:** [Isi NIM Kamu]  
-**Kelas:** [Isi Kelas Kamu]  
+**Nama:** Azhar Nashrullah
+**NIM:** 2611500064
+**Kelas:** TI1J
 
 ---
 
