@@ -1,3 +1,6 @@
+<?php
+// P6: PHP dasar dan pemrograman sisi peladen
+?>
 <!DOCTYPE html>
 <html lang="id">
 
@@ -54,7 +57,7 @@ print "Keluaran menggunakan print.";
 
             <div id="formFeedback"></div>
 
-            <form id="contactForm" novalidate>
+           <form id="contactForm" action="index.php" novalidate>
                 <div class="form-group">
                     <label for="nama">Nama Lengkap:</label><br />
                     <input type="text" id="nama" name="nama" class="input-form" />
