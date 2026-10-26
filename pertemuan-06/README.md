@@ -42,3 +42,9 @@
 ### D.4 Penggunaan Variabel dan Konstanta
 - Menampilkan data nama mahasiswa, mata kuliah, dan tahun akademik secara dinamis pada bagian Beranda.
 - Menggunakan sintaks singkat `<?= PROFIL_GITHUB ?>` untuk membentuk tautan URL profil GitHub.
+## E. Operator PHP
+
+### E.1 - E.3 Penerapan Operator Aritmetika, Perbandingan, dan Logika
+- **Operator Aritmetika (`-`):** Menghitung sisa semester (`$batasSemester - $semester`), menghasilkan nilai `6`.
+- **Operator Perbandingan (`>=`, `<=`) & Logika (`&&`):** Memeriksa apakah semester berada pada rentang 1 s.d. 8 dan mahasiswa berstatus aktif.
+- **Operator Ternary (`?:`):** Menentukan teks hasil pemeriksaan (`"Sesuai rentang"` vs `"Perlu diperiksa"`).

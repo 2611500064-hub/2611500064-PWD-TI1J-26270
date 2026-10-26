@@ -1,17 +1,23 @@
 <?php
 // P6: PHP dasar dan pemrograman sisi peladen
 // Bagian 1: Variabel dan konstanta
+// Bagian 2: Operator
+
 $nim = "2611500064";
 $namaMahasiswa = "Azhar Nashrullah";
 $programStudi = "TI";
 $tahunAkademik = "2026/2027";
 $semester = 1;
-$ipk = 0.00;
 $statusAktif = true;
 $catatanTambahan = null;
 
 const NAMA_MATA_KULIAH = "Pemrograman Web Dasar";
 const PROFIL_GITHUB = "2611500064-hub";
+
+$batasSemester = 8;
+$sisaSemester = $batasSemester - $semester;
+$semesterValid = ($semester >= 1 && $semester <= $batasSemester);
+$statusSemester = ($semesterValid && $statusAktif) ? "Sesuai rentang" : "Perlu diperiksa";
 ?>
 <!DOCTYPE html>
 <html lang="id">
@@ -43,11 +49,16 @@ const PROFIL_GITHUB = "2611500064-hub";
             <img src="img/foto-profil.jpeg" alt="Foto Profil Azhar Nashrullah" />
         </section>
 
-        <section id="about">
-            <h2>Tentang Saya</h2>
-            <h3>Profil Singkat</h3>
-            <p>Saya mahasiswa Program Studi Teknik Informatika.</p>
-            <h3>Target Belajar</h3>
+       <section id="about">
+    <h2>Tentang Saya</h2>
+    <h3>Profil Singkat</h3>
+    
+    <!-- TULIS 2 BARIS INI DI SINI -->
+    <p>Sisa semester hingga batas: <?php echo $sisaSemester; ?></p>
+    <p>Pemeriksaan rentang semester: <?php echo $statusSemester; ?></p>
+    
+    <p>Saya mahasiswa Program Studi Teknik Informatika.</p>
+    <h3>Target Belajar</h3>
             <ol>
                 <li>Memahami struktur HTML5.</li>
                 <li>Menyusun halaman web semantik.</li>
