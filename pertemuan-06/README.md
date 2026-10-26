@@ -24,3 +24,12 @@
 - **Hasil Pengujian Akses:**
   - Halaman `index.php` berhasil diproses oleh peladen Apache dan dibuka melalui peramban tanpa adanya galat (*error*).
   - Tampilan visual, gaya CSS, interaksi JavaScript, serta struktur navigasi dari baseline P5 tetap berfungsi dan dipertahankan dengan baik.
+  - Halaman `index.php` berhasil diproses oleh peladen Apache dan dibuka melalui peramban tanpa adanya galat (*error*).
+  - Tampilan visual, gaya CSS, interaksi JavaScript, serta struktur navigasi dari baseline P5 tetap berfungsi dan dipertahankan dengan baik.
+  ## C. Dasar PHP dan Integrasi dengan HTML
+
+### C.1 - C.3 Pengujian Tag PHP, Komentar, Echo, dan Print
+- **Pengujian Tag PHP (`<?php ?>`):** Kode PHP berhasil diproses oleh peladen. Saat diperiksa via View Page Source (`Ctrl + U`), kode sumber PHP mentah dan komentar tidak dikirimkan ke peramban.
+- **Pengujian `echo` vs `print`:** 
+  - `echo` mencetak teks keluaran secara langsung.
+  - `print` juga berhasil mencetak teks keluaran pada halaman.

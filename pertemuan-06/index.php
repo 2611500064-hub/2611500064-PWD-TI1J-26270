@@ -9,6 +9,16 @@
 </head>
 
 <body>
+    <?php
+// Pengujian awal eksekusi PHP
+echo "PHP berhasil dijalankan.<br>";
+
+/* 
+   Komentar beberapa baris.
+   Komentar ini tidak akan tampil pada halaman.
+*/
+print "Keluaran menggunakan print.";
+?>
     <header>
         <button id="navToggle" aria-expanded="false" aria-label="Buka navigasi">&#9776;</button>
         <nav id="navMenu">
