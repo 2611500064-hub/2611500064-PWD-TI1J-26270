@@ -17,3 +17,11 @@
 - Menyimpan hasil input formulir kegiatan ke dalam `$_SESSION`.
 - Menerapkan pola Post-Redirect-Get (PRG) mengarahkan kembali pengguna ke `index.php#kegiatan` guna mencegah resubmission data saat memuat ulang halaman.
 
+### Tahap 5: Validasi Sisi Klien (JavaScript) & Pengujian Aplikasi
+- Menambahkan penanganan event submit pada `kegiatanForm` untuk memvalidasi input di sisi klien sebelum data dikirim ke server.
+- Melakukan pengujian menyeluruh pada fitur baru dan memastikan fitur lama tidak terganggu.
+- Navigasi: Klik rencana, halaman berpindah ke section kegiatan -> Berhasil
+- Validasi JS: Submit formulir saat input masih kosong, form tidak terkirim dan pesan peringatan muncul -> Berhasil
+- Pemrosesan PHP: Mengisi dan mengirim formulir kegiatan, data tersimpan di session dan tampil di halaman -> Berhasil
+- Pola PRG: Memuat ulang halaman setelah submit, data tidak terkirim ganda saat refresh -> Berhasil
+- Fitur Kontak Lama: Mengirim formulir kontak, fitur kontak tetap berfungsi dengan baik -> Berhasil

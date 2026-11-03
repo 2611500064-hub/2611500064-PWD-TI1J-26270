@@ -126,3 +126,24 @@ contactForms.forEach((contactForm) => {
     }
   });
 });
+// Validasi Sisi Klien untuk Formulir Rencana Kegiatan Mahasiswa
+const kegiatanForm = document.getElementById("kegiatanForm");
+
+if (kegiatanForm) {
+  kegiatanForm.addEventListener("submit", function (event) {
+    const nama = document.getElementById("nama_kegiatan").value.trim();
+    const kategori = document.getElementById("kategori_kegiatan").value;
+    const tanggal = document.getElementById("tgl_pelaksanaan").value;
+    const lokasi = document.getElementById("lokasi_kegiatan").value.trim();
+    const deskripsi = document.getElementById("deskripsi_kegiatan").value.trim();
+    const feedback = kegiatanForm.querySelector("[data-form-feedback]");
+
+    if (!nama || !kategori || !tanggal || !lokasi || !deskripsi) {
+      event.preventDefault();
+      if (feedback) {
+        feedback.textContent = "Harap isi semua bidang formulir rencana kegiatan dengan benar!";
+        feedback.style.color = "red";
+      }
+    }
+  });
+}
