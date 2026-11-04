@@ -19,3 +19,9 @@
   1. Parameter formulir tidak lagi tampil pada URL peramban saat tombol Kirim Pesan diklik.
   2. Validasi sisi peladen berhasil memeriksa kelengkapan data, format email, dan jangkauan angka semester.
   3. Sanitasi `htmlspecialchars()` mencegah eksekusi karakter HTML berbahaya (XSS).
+  ### Tahap 4: Pengelolaan Sesi dan Pola PRG (`index.php`)
+- **Deskripsi**: Menerapkan `session_start()` untuk menyimpan sementara data isian dan pesan kesalahan validasi, serta menggunakan `header('Location: index.php')` untuk pengalihan pola Post-Redirect-Get.
+- **Hasil Pengujian**:
+  1. Setelah formulir dikirim, peramban otomatis melakukan pengalihan balik ke `index.php` melalui HTTP GET.
+  2. Data isian formulir tetap tampil di bawah halaman berkat penyimpanan `$_SESSION`.
+  3. Saat dilakukan peremajaan halaman (*refresh*), peramban tidak lagi menampilkan dialog konfirmasi pengiriman data ulang (*Confirm Form Resubmission*).
