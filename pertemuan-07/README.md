@@ -12,3 +12,10 @@
 - **Hasil Pengujian**:
   1. Validasi JavaScript berhasil memblokir pengiriman jika ada isian yang tidak lengkap.
   2. Saat seluruh kolom valid, fungsi `contactForm.submit()` berjalan dan mengirimkan data form.
+
+  ### Tahap 3: Pemrosesan Metode POST & Validasi Peladen (`index.php`)
+- **Deskripsi**: Mengubah metode pengiriman formulir menjadi POST, menyesuaikan atribut `minat[]`, serta menerapkan sanitasi masukan (`trim`) dan pengamanan keluaran (`htmlspecialchars`).
+- **Hasil Pengujian**:
+  1. Parameter formulir tidak lagi tampil pada URL peramban saat tombol Kirim Pesan diklik.
+  2. Validasi sisi peladen berhasil memeriksa kelengkapan data, format email, dan jangkauan angka semester.
+  3. Sanitasi `htmlspecialchars()` mencegah eksekusi karakter HTML berbahaya (XSS).
