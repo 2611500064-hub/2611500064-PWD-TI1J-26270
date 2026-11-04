@@ -3,7 +3,11 @@ const navMenu = document.getElementById("navMenu");
 
 navToggle.addEventListener("click", () => {
     const isOpen = navMenu.classList.toggle("nav-open");
+
+    navToggle.classList.toggle("active", isOpen);
+    navToggle.textContent = isOpen ? "▼" : "☰";
     navToggle.setAttribute("aria-expanded", isOpen);
+
     if (isOpen) {
         navToggle.setAttribute("aria-label", "Tutup navigasi");
     } else {
@@ -55,7 +59,8 @@ contactForm.addEventListener("submit", (event) => {
         return;
     }
 
-    const topikDipilih = document.querySelectorAll('input[name="minat"]:checked');
+    // Mendukung penyeleksian name="minat" (GET) dan name="minat[]" (POST)
+    const topikDipilih = document.querySelectorAll('input[name="minat"]:checked, input[name="minat[]"]:checked');
     if (topikDipilih.length === 0) {
         formFeedback.textContent = "Pilih minimal satu topik yang diminati.";
         return;
@@ -78,8 +83,10 @@ contactForm.addEventListener("submit", (event) => {
         return;
     }
 
+    // Menampilkan pesan sukses dan meneruskan pengiriman formulir ke PHP
     formFeedback.textContent = "Form berhasil divalidasi.";
     formFeedback.className = "form-feedback-success";
+    contactForm.submit();
 });
 
 contactForm.addEventListener("reset", () => {
