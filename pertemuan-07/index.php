@@ -1,12 +1,16 @@
 <?php
 session_start();
 
-// 1. Inisialisasi variabel awal agar tidak error saat pertama kali dibuka (GET)
+// 1. Inisialisasi variabel awal
 $nama         = '';
-$email        = '';$semesterForm = '';
-$tanggal      = '';$jenisPesan   = '';
-$prodi        = '';$pesan        = '';
-$minat        = [];$pesankesalahan = '';
+$email        = '';
+$semesterForm = '';
+$tanggal      = '';
+$jenisPesan   = '';
+$prodi        = '';
+$pesan        = '';
+$minat        = [];
+$pesankesalahan = '';
 
 // 2. Pemrosesan Data ketika Formulir Dikirim melalui POST
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -18,59 +22,64 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $jenisPesan   = trim((string) ($_POST['jenis_pesan'] ?? ''));
     $prodi        = trim((string) ($_POST['prodi'] ?? ''));
     $pesan        = trim((string) ($_POST['pesan'] ?? ''));
-    $minat        =$_POST['minat'] ?? [];
+    $minat        = $_POST['minat'] ?? [];
 
     // Validasi Kelengkapan Data
-    if (trim($nama) === '') {$pesankesalahan .= 'Nama lengkap wajib diisi. '; }
-    if (trim($email) === '') {$pesankesalahan .= 'Email wajib diisi. '; }
-    if (trim($semesterForm) === '') {$pesankesalahan .= 'Semester wajib diisi. '; }
-    if (trim($tanggal) === '') {$pesankesalahan .= 'Tanggal kunjungan wajib diisi. '; }
-    if ($jenisPesan === '') {$pesankesalahan .= 'Jenis pesan wajib dipilih. '; }
-    if ($prodi === '') {$pesankesalahan .= 'Program studi wajib dipilih. '; }
-    if (trim($pesan) === '') {$pesankesalahan .= 'Pesan wajib diisi. '; }
-    if (empty($minat)) {$pesankesalahan .= 'Minat wajib dipilih minimal satu. '; }
+    if (trim($nama) === '') { $pesankesalahan .= 'Nama lengkap wajib diisi. '; }
+    if (trim($email) === '') { $pesankesalahan .= 'Email wajib diisi. '; }
+    if (trim($semesterForm) === '') { $pesankesalahan .= 'Semester wajib diisi. '; }
+    if (trim($tanggal) === '') { $pesankesalahan .= 'Tanggal kunjungan wajib diisi. '; }
+    if ($jenisPesan === '') { $pesankesalahan .= 'Jenis pesan wajib dipilih. '; }
+    if ($prodi === '') { $pesankesalahan .= 'Program studi wajib dipilih. '; }
+    if (trim($pesan) === '') { $pesankesalahan .= 'Pesan wajib diisi. '; }
+    if (empty($minat)) { $pesankesalahan .= 'Minat wajib dipilih minimal satu. '; }
 
     // Validasi Format Email & Semester
     if (trim($semesterForm) !== '') {
         $semesterValid = filter_var($semesterForm, FILTER_VALIDATE_INT);
-        if ($semesterValid === false \vert{}\vert{}$semesterValid < 1 || $semesterValid > 14) {$pesankesalahan .= 'Semester harus berupa bilangan bulat antara 1 dan 14. ';
+        if ($semesterValid === false || $semesterValid < 1 || $semesterValid > 14) {
+            $pesankesalahan .= 'Semester harus berupa bilangan bulat antara 1 dan 14. ';
         }
     }
 
     if (trim($email) !== '') {
-        if (filter_var($email, FILTER_VALIDATE_EMAIL) === false) {$pesankesalahan .= 'Format email tidak valid. ';
+        if (filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
+            $pesankesalahan .= 'Format email tidak valid. ';
         }
     }
 
     // Validasi Pilihan
-    if (!in_array($jenisPesan, ['pertanyaan', 'saran'], true)) {$pesankesalahan .= 'Jenis pesan tidak valid. ';
+    if (!in_array($jenisPesan, ['pertanyaan', 'saran'], true)) {
+        $pesankesalahan .= 'Jenis pesan tidak valid. ';
     }
 
-    if (!in_array($prodi, ['si', 'ti', 'SI', 'TI'], true)) {$pesankesalahan .= 'Program studi tidak valid. ';
+    if (!in_array($prodi, ['si', 'ti', 'SI', 'TI'], true)) {
+        $pesankesalahan .= 'Program studi tidak valid. ';
     }
 
     $minatDiizinkan = ['web', 'design', 'HTML', 'CSS'];
-    if (!is_array($minat)) {$pesankesalahan .= 'Format pilihan topik tidak valid. ';
+    if (!is_array($minat)) {
+        $pesankesalahan .= 'Format pilihan topik tidak valid. ';
     } else {
-        foreach ($minat as$topik) {
-            if (!in_array($topik, $minatDiizinkan, true)) {$pesankesalahan .= 'Pilihan topik tidak valid. ';
+        foreach ($minat as $topik) {
+            if (!in_array($topik, $minatDiizinkan, true)) {
+                $pesankesalahan .= 'Pilihan topik tidak valid. ';
                 break;
             }
         }
     }
 
     // Simpan Data & Pesan Kesalahan ke dalam Session (Pola PRG)
-    $_SESSION['pesankesalahan'] =$pesankesalahan;
-    $_SESSION['nama']           =$nama;
-    $_SESSION['email']          =$email;
-    $_SESSION['semester']       =$semesterForm;
-    $_SESSION['tanggal']        =$tanggal;
-    $_SESSION['jenis_pesan']    =$jenisPesan;
-    $_SESSION['prodi']          =$prodi;
-    $_SESSION['minat']          =$minat;
-    $_SESSION['pesan']          =$pesan;
+    $_SESSION['pesankesalahan'] = $pesankesalahan;
+    $_SESSION['nama']           = $nama;
+    $_SESSION['email']          = $email;
+    $_SESSION['semester']       = $semesterForm;
+    $_SESSION['tanggal']        = $tanggal;
+    $_SESSION['jenis_pesan']    = $jenisPesan;
+    $_SESSION['prodi']          = $prodi;
+    $_SESSION['minat']          = $minat;
+    $_SESSION['pesan']          = $pesan;
 
-    // Dialihkan menggunakan header Location (Redirect via GET)
     header('Location: index.php');
     exit;
 }
