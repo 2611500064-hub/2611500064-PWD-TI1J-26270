@@ -1,8 +1,17 @@
 <?php
 session_start();
 
-$contohArray = ["PHP", "JavaScript", "HTML", "CSS"];
-echo $Contoharray[0];
+function bersihkan($teks)
+{
+	return htmlspecialchars($teks, ENT_QUOTES, 'UTF-8');
+}
+echo "Hai <b>disana</b> kamu";
+echo bersihkan("<b>Hai disana</b> kamu");
+echo "<script>alert('Hai');</script>";
+echo bersihkan("<script>alert('Hai');</script>");
+	
+$contoharray = ["rafli, eno", "budi", "sari"];
+echo $contoharray[1];
 
 
 // P7: Memproses data formulir dan menyimpannya ke dalam session.
@@ -22,20 +31,25 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 	}
 
 	// Menyimpan setiap nilai formulir ke dalam session secara terpisah.
-	$_SESSION["nama"] = $nama;
-	$_SESSION["email"] = $email;
-	$_SESSION["semester"] = $semesterForm;
-	$_SESSION["tanggal"] = $tanggal;
-	$_SESSION["jenis_pesan"] = $jenisPesan;
-	$_SESSION["minat"] = $minat;
-	$_SESSION["prodi"] = $prodi;
-	$_SESSION["pesan"] = $pesan;
+
+
+
+	$_SESSION["form_data"] = [
+    "nama"        => $nama,
+    "email"       => $email,
+    "semester"    => $semesterForm,
+    "tanggal"     => $tanggal,
+    "jenis_pesan" => $jenisPesan,
+    "minat"       => $minat,
+    "prodi"       => $prodi,
+    "pesan"       => $pesan,
+];
 
 	// PRG: mencegah pengiriman POST berulang ketika halaman dimuat ulang.
 	header("Location: index.php#contact");
 	exit;
 }
-
+echo $_SESSION["form_data"]["prodi"];
 // Mengamankan data sebelum ditampilkan kembali ke halaman HTML.
 // P6: PHP dasar dan pemrograman sisi peladen
 // Bagian 1: Variabel dan konstanta
@@ -266,19 +280,19 @@ switch ($programStudi) {
 				<p class="form-feedback" data-form-feedback aria-live="polite"></p>
 			</form>
 
-			<?php if (isset($_SESSION["nama"])): ?>
+			<?php if (isset($_SESSION["form_data"])): ?>
 				<article id="hasilKontak" class="submission-result" aria-live="polite">
 					<h3>Data Formulir yang Dikirim</h3>
-					<p><strong>Nama Lengkap:</strong> <?= htmlspecialchars($_SESSION["nama"] ?? "", ENT_QUOTES, "UTF-8") ?></p>
-					<p><strong>Email:</strong> <?= htmlspecialchars($_SESSION["email"] ?? "", ENT_QUOTES, "UTF-8") ?></p>
-					<p><strong>Semester:</strong> <?= htmlspecialchars($_SESSION["semester"] ?? "", ENT_QUOTES, "UTF-8") ?></p>
-					<p><strong>Tanggal Kunjungan:</strong> <?= htmlspecialchars($_SESSION["tanggal"] ?? "", ENT_QUOTES, "UTF-8") ?></p>
-					<p><strong>Jenis Pesan:</strong> <?= htmlspecialchars($_SESSION["jenis_pesan"] ?? "", ENT_QUOTES, "UTF-8") ?></p>
+					<p><strong>Nama Lengkap:</strong> <?= bersihkan($_SESSION["form_data"]["nama"])?></p>
+					<p><strong>Email:</strong> <?= bersihkan($_SESSION["form_data"]["email"]) ?></p>
+					<p><strong>Semester:</strong> <?= bersihkan($_SESSION["form_data"]["semester"]) ?></p>
+					<p><strong>Tanggal Kunjungan:</strong> <?= bersihkan($_SESSION["form_data"]["tanggal"] ) ?></p>
+					<p><strong>Jenis Pesan:</strong> <?= bersihkan($_SESSION["form_data"]["jenis_pesan"] ) ?></p>
 					<p><strong>Topik yang Diminati:</strong>
-						<?= htmlspecialchars(implode(", ", $_SESSION["minat"] ?? []), ENT_QUOTES, "UTF-8") ?>
+						<?= bersihkan(implode(", ", $_SESSION["form_data"]["minat"])) ?>
 					</p>
-					<p><strong>Program Studi:</strong> <?= htmlspecialchars($_SESSION["prodi"] ?? "", ENT_QUOTES, "UTF-8") ?></p>
-					<p><strong>Pesan:</strong> <?= nl2br(htmlspecialchars($_SESSION["pesan"] ?? "", ENT_QUOTES, "UTF-8")) ?></p>
+					<p><strong>Program Studi:</strong> <?= bersihkan($_SESSION["form_data"]["prodi"] ) ?></p>
+					<p><strong>Pesan:</strong> <?= nl2br(bersihkan($_SESSION["form_data"]["pesan"])) ?></p>
 				</article>
 			<?php endif; ?>
 		</section>
