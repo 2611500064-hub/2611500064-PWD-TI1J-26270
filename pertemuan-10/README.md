@@ -51,3 +51,11 @@ Ditambahkan satu atribut `id` sebagai kunci utama (`PRIMARY KEY`) dengan `AUTO_I
 - Data awal pertama (`Azhar Nashrullah`) berhasil dimasukkan melalui fasilitas `Insert` pada phpMyAdmin.
 - Data awal kedua (`Andi`) berhasil dimasukkan menggunakan perintah SQL `INSERT INTO`.
 - Pemeriksaan melalui tab `Browse` menunjukkan 2 baris data tersimpan lengkap dengan nilai `id` (`1` dan `2`) yang terbentuk otomatis oleh `AUTO_INCREMENT`.
+
+---
+
+## G. Mengekspor Struktur dan Data Basis Data
+### G.1 - G.3. Ekspor dan Pemeriksaan Berkas SQL
+- Basis data `db_pwd_2611500064` telah diekspor menggunakan metode `Quick` dengan format `SQL`.
+- Berkas hasil ekspor disimpan pada direktori `pertemuan-10\db_pwd_2611500064.sql`.
+- Pemeriksaan berkas melalui VS Code memastikan perintah `CREATE TABLE` untuk struktur tabel dan `INSERT INTO` untuk 2 data awal telah tercantum lengkap.
