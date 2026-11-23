@@ -36,3 +36,11 @@ Ditambahkan satu atribut `id` sebagai kunci utama (`PRIMARY KEY`) dengan `AUTO_I
 | 7 | `minat` | `VARCHAR(50)` | Pilihan minat (dipisah koma) |
 | 8 | `prodi` | `VARCHAR(2)` | Kode prodi (`SI` / `TI`) |
 | 9 | `pesan` | `VARCHAR(300)` | Isi pesan maksimal 300 karakter |
+
+---
+
+## E. Membuat Basis Data dan Tabel Menggunakan phpMyAdmin
+### E.1 - E.6. Implementasi dan Pemeriksaan Struktur
+- Basis data `db_pwd_2611500064` telah berhasil dibuat melalui phpMyAdmin.
+- Tabel `tbl_kontak_2611500064` telah dibuat di dalam `db_pwd_2611500064` dengan 9 atribut (`id`, `nama`, `email`, `semester`, `tanggal`, `jenis_pesan`, `minat`, `prodi`, `pesan`).
+- Hasil pemeriksaan melalui tab `Structure` memastikan seluruh tipe data, panjang karakter, serta `PRIMARY KEY` dan `AUTO_INCREMENT` pada kolom `id` sudah sesuai dengan rancangan.
