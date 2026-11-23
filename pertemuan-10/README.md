@@ -44,3 +44,10 @@ Ditambahkan satu atribut `id` sebagai kunci utama (`PRIMARY KEY`) dengan `AUTO_I
 - Basis data `db_pwd_2611500064` telah berhasil dibuat melalui phpMyAdmin.
 - Tabel `tbl_kontak_2611500064` telah dibuat di dalam `db_pwd_2611500064` dengan 9 atribut (`id`, `nama`, `email`, `semester`, `tanggal`, `jenis_pesan`, `minat`, `prodi`, `pesan`).
 - Hasil pemeriksaan melalui tab `Structure` memastikan seluruh tipe data, panjang karakter, serta `PRIMARY KEY` dan `AUTO_INCREMENT` pada kolom `id` sudah sesuai dengan rancangan.
+---
+
+## F. Memasukkan dan Memeriksa Data Awal
+### F.1 - F.4. Pemasukan dan Pemeriksaan Data
+- Data awal pertama (`Azhar Nashrullah`) berhasil dimasukkan melalui fasilitas `Insert` pada phpMyAdmin.
+- Data awal kedua (`Andi`) berhasil dimasukkan menggunakan perintah SQL `INSERT INTO`.
+- Pemeriksaan melalui tab `Browse` menunjukkan 2 baris data tersimpan lengkap dengan nilai `id` (`1` dan `2`) yang terbentuk otomatis oleh `AUTO_INCREMENT`.
